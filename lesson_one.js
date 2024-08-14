@@ -28,7 +28,7 @@ console.log("hello world !!");
 // , making it a popular choice for building scalable and maintainable applications.
 
 // o Arrow Functions and Template Literals ✅
-// o Rest and Spread Operators
+// o Rest and Spread Operators ✅
 // o Classes and Inheritance
 // o Static Methods and Properties
 // o Iterators and Iterables
@@ -106,3 +106,85 @@ console.log("Template literals section ::>", personTemplate);
 console.log(
   "<--------------------------Rest and Spread Operators section----------------------------->"
 );
+//Rest operators
+// The rest operator is a feature of JavaScript that allows you to represent an indefinite number of arguments as
+// an array. It is denoted by the three dots (...) and is used in function parameters and
+// array destructuring.
+// Here is an example of using the rest operator in a function parameter:
+
+//example 1
+function restSum(args) {
+  console.log(args);
+}
+restSum(1, 2, 4, 5);
+//example 2
+function restSum1(...args) {
+  console.log(args);
+}
+restSum1(1, 2, 4, 5);
+
+//example 3 with computation/logical task
+function sumOfArgs(...numbers) {
+  let sum = 0;
+  for (let number of numbers) {
+    sum += number;
+  }
+  return sum;
+}
+console.log("Rest operator section ::>", sumOfArgs(10, 22, 31, 49));
+// Outputs: 10;
+
+// spread operators
+// The spread operator is a feature of JavaScript that allows you to expand an array or an object into
+// a list of arguments or properties. It is denoted by the three dots (...) and is used
+// in function calls, array literals, and object literals.
+// Here is an example of using the spread operator in a function call:
+//example 1
+function spreadSum(a, b, c) {
+  console.log(a + b + c);
+}
+spreadSum(1, 2, 3);
+//example 2
+function spreadSum1(a, b, c) {
+  console.log(a + b + c);
+}
+
+//step 1
+const numbers = [1, 2, 3];
+//step 2
+// 1,2,3
+spreadSum1(...numbers);
+
+spreadSum1(...[1, 2, 3]); //=> 1,2,3 removes the brackets of array or object
+// Outputs: 6;
+
+//example of spread operator with arrays
+//example 1
+const arr1 = [0, 1, 2, 3];
+const arr2 = [4, 5, 6];
+
+//New array of previous arrays 1 and 2
+//step 1
+// const arr3 = [...arr1]; => const arr3 =[1, 2, 3]
+//step 2
+// const arr3 = [...arr1,...arr2]; => const arr3 = [1, 2, 3,...arr2] => const arr3 = [1, 2, 3,4, 5, 6]
+const arr3 = [...arr1, ...arr2];
+console.log("Array-3", arr3);
+
+//example of spread operator with objects
+//example 1
+const personObj = { name: "Dr.Faizan", gender: "M", profession: "Professor" };
+const additionalDetails = { age: 36, address: "street 1 London" };
+
+const userProfile = {
+  ...personObj,
+  ...additionalDetails,
+};
+
+// const userProfile = {
+//   ...personObj,
+//   age: additionalDetails.age,
+//   qualifications: "PHD",
+// };
+
+console.log("user-profile", userProfile);
