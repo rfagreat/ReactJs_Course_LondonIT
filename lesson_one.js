@@ -29,10 +29,6 @@ console.log("hello world !!");
 
 // o Arrow Functions and Template Literals ✅
 // o Rest and Spread Operators ✅
-// o Classes and Inheritance
-// o Static Methods and Properties
-// o Iterators and Iterables
-// o Generators
 
 // o Arrow Functions:
 // Arrow functions are a concise way to write function expressions in JavaScript and were introduced in ES6.
