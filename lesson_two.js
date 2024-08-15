@@ -31,8 +31,8 @@ console.log("hello world !!");
 // o Rest and Spread Operators ✅
 // o Classes and Inheritance ✅
 // o Static Methods and Properties ✅
-// o Iterators and Iterables
-// o Generators
+// o Iterators and Iterables ✅
+// o Generators ✅
 
 // o Classes and Inheritance
 console.log(
@@ -126,6 +126,10 @@ const circle = new Circle(5);
 console.log("area of circle ::>", circle.getArea()); // Output: 78.53975
 
 // o Iterators and Iterables
+
+console.log(
+  "<-------------------------- Iterators and Iterables----------------------------->"
+);
 // Iterators and iterables are used to loop over data structures such as arrays, objects, and sets.
 
 // Iterables:
@@ -219,3 +223,36 @@ console.log(it.next()); // Output: { value: 2, done: false }
 console.log(it.next()); // Output: { value: 3, done: false }
 console.log(it.next()); // Output: { value: 4, done: false }
 console.log(it.next(), "\n"); // Output: { value: undefined, done: true }
+
+// o Generators
+console.log(
+  "<-------------------------- Generators----------------------------->"
+);
+// Generators: Generators in JavaScript are special types of functions that can be paused and resumed during execution,
+// allowing you to control the iteration process more explicitly.
+// Generators provide a more powerful and flexible way to work with iterators.
+
+function a() {
+  let i = 0;
+  while (i < 3) {
+    i++;
+  }
+  return `result: ${i}`;
+}
+
+console.log("a:::>", a());
+
+function* generator() {
+  let count = 0;
+  while (count < 3) {
+    yield count;
+    count++;
+  }
+}
+
+const gen = generator();
+console.log("generator:::>", gen.next());
+console.log("generator:::>", gen.next());
+console.log("generator:::>", gen.next());
+console.log("generator:::>", gen.next());
+console.log("generator:::>", gen.return());
