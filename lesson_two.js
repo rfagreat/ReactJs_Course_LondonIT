@@ -29,8 +29,8 @@ console.log("hello world !!");
 
 // o Arrow Functions and Template Literals ✅
 // o Rest and Spread Operators ✅
-// o Classes and Inheritance
-// o Static Methods and Properties
+// o Classes and Inheritance ✅
+// o Static Methods and Properties ✅
 // o Iterators and Iterables
 // o Generators
 
@@ -88,3 +88,134 @@ class Dog extends Animal {
 const dog = new Dog("Bulldog", "Mammal", "wof wof wof", "brown");
 console.log("parent method call", dog.animalDetail(), "\n");
 dog.speak();
+
+// o Static Methods and Properties
+
+// Static methods and properties are methods and properties that belong to the class itself, not to instances of the class.
+
+// Example
+class Calculator {
+  static add(a, b) {
+    return a + b;
+  }
+
+  static subtract(a, b) {
+    return a - b;
+  }
+}
+
+console.log("addition ::>", Calculator.add(4, 9), "\n");
+console.log("subtraction ::>", Calculator.subtract(9, 5), "\n");
+
+// Static properties
+class Circle {
+  //static property
+  static pi = 3.14159;
+
+  constructor(radius) {
+    this.radius = radius;
+  }
+
+  getArea() {
+    // area of circle = pie r square
+    return Circle.pi * this.radius * this.radius;
+  }
+}
+
+const circle = new Circle(5);
+console.log("area of circle ::>", circle.getArea()); // Output: 78.53975
+
+// o Iterators and Iterables
+// Iterators and iterables are used to loop over data structures such as arrays, objects, and sets.
+
+// Iterables:
+// An iterable is an object that implements the @@iterator method, meaning it has a Symbol.iterator property.
+//  This method should return an iterator, which can then be used to step through the items of the iterable.
+
+// Examples of Iterables:
+// 1.Arrays
+// 2. Sets
+// 3. Maps
+// 4. Strings
+// 5. DOM collections (e.g., NodeList, HTMLCollection)
+
+// Example of an Iterable (Array):
+
+const numbers = [1, 2, 3];
+for (const number of numbers) {
+  console.log("loop one number::>", number); // Output: 1, 2, 3 (in sequence)
+}
+
+// OR
+for (let i = 0; i < numbers.length; i++) {
+  console.log("loop two number::>", numbers[i]); // Output: 1, 2, 3 (in sequence)
+}
+
+// In this example, the array of numbers is an iterable, and the for...of loop/for-loop is used to iterate over its elements.
+
+// Example of set/object
+const obj = { name: "john", age: 34, address: "street 1 London" };
+
+for (const key in obj) {
+  console.log("key:", key); // Output: key: name, key: age, key: address
+  console.log("value:", obj[key]); // Output: value: john, value: 34, value: street 1 London
+}
+
+// Iterators:
+// An iterator is an object that conforms to the iterator protocol, which means it has a next() method that returns an object with two properties:
+
+// value: the next value in the sequence.
+// done: a boolean indicating whether the iteration is complete (i.e., whether there are more values to iterate over).
+// Iterators: Objects that follow the iterator protocol. They have a next() method that returns an object with value and done properties.
+
+// Example of Iterators 1:
+
+function makeCounter() {
+  // initial count
+  let count = 0;
+  //  closure property and making cache in back of the scene using closure
+  return {
+    next() {
+      count++;
+      return { value: count, done: count > 5 };
+    },
+  };
+}
+
+const counter = makeCounter();
+
+console.log(counter.next()); // Output: { value: 1, done: false }
+console.log(counter.next()); // Output: { value: 2, done: false }
+console.log(counter.next()); // Output: { value: 3, done: false }
+console.log(counter.next()); // Output: { value: 4, done: false }
+console.log(counter.next()); // Output: { value: 5, done: false }
+console.log(counter.next(), "\n"); // Output: { value: 6, done: false }
+
+// The makeCounter function returns an iterator with a next() method.
+// Each call to next() returns the next number in the sequence and indicates whether the iteration is complete using the done property.
+
+// Example 2 of Iterators:
+function makeRangeIterator(start = 0, end = 10, step = 1) {
+  let current = start;
+  let last = end;
+
+  return {
+    next() {
+      if (current < last) {
+        let value = current;
+        current += step;
+        return { value: value, done: false };
+      } else {
+        return { done: true };
+      }
+    },
+  };
+}
+
+const it = makeRangeIterator(1, 5);
+
+console.log(it.next()); // Output: { value: 1, done: false }
+console.log(it.next()); // Output: { value: 2, done: false }
+console.log(it.next()); // Output: { value: 3, done: false }
+console.log(it.next()); // Output: { value: 4, done: false }
+console.log(it.next(), "\n"); // Output: { value: undefined, done: true }
