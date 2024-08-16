@@ -19,32 +19,10 @@ import React from "react";
  * @returns {ReactElement} - The newly created React element
  */
 const element = React.createElement(
-  "div", //type
-  {
-    className: "container",
-    style: {
-      backgroundColor: "lightblue",
-      padding: "20px",
-      borderRadius: "5px",
-    },
-  }, //props
-  // "Hello World!" //children
-  React.createElement(
-    "h1",
-    {
-      style: {
-        color: "darkblue",
-        fontSize: "24px",
-        textAlign: "center",
-      },
-    },
-    "Hello, World!"
-  ), //children
-  React.createElement("p", null, "This is a paragraph.") //children
+  "div",
+  { className: "container" },
+  React.createElement("h1", null, "Hello, World!"),
+  React.createElement("p", null, "This is a paragraph.")
 );
 
-function App() {
-  return element;
-}
-
-export default App;
+export default element;
