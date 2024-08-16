@@ -10,41 +10,29 @@
  * In this example, the JSX syntax `<div>Hello World!</div>` is used to create a React element that represents a `div` HTML element with the text "Hello World!".
  */
 import React from "react";
-/**
- * Creates a new React element.
- *
- * @param {string} type - The type of element to create (e.g. 'div', 'span', etc.)
- * @param {object} props - An object containing the props to pass to the element
- * @param {any} children - The children of the element (can be a string, a React element, or an array of React elements)
- * @returns {ReactElement} - The newly created React element
- */
-const element = React.createElement(
-  "div", //type
-  {
-    className: "container",
-    style: {
-      backgroundColor: "lightblue",
-      padding: "20px",
-      borderRadius: "5px",
-    },
-  }, //props
-  // "Hello World!" //children
-  React.createElement(
-    "h1",
-    {
-      style: {
-        color: "darkblue",
-        fontSize: "24px",
-        textAlign: "center",
-      },
-    },
-    "Hello, World!"
-  ), //children
-  React.createElement("p", null, "This is a paragraph.") //children
-);
+import MyFirstelement from "./elements/element";
+import Login from "./pages/Login";
 
 function App() {
-  return element;
+  const user = {
+    name: "John Doe",
+    isLoggedIn: true,
+    isAdmin: true,
+  };
+
+  return (
+    <React.Fragment>
+      {/*Use of LOGICAL AND operator to conditional render*/}
+      {user.isLoggedIn && MyFirstelement}
+
+      {(user.isLoggedIn || user.isAdmin) && <p>{user.name}</p>}
+
+      {/*Use of LOGICAL AND and NOT operator*/}
+      {!user.isLoggedIn && <Login />}
+
+      {/* {user.isLoggedIn ? MyFirstelement : <Login />} */}
+    </React.Fragment>
+  );
 }
 
 export default App;
