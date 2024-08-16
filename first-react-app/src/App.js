@@ -12,6 +12,7 @@
 import React from "react";
 import MyFirstelement from "./elements/element";
 import Login from "./pages/Login";
+import ButtonElement from "./elements/ButtonElement";
 
 function App() {
   const user = {
@@ -31,6 +32,8 @@ function App() {
       {!user.isLoggedIn && <Login />}
 
       {/* {user.isLoggedIn ? MyFirstelement : <Login />} */}
+
+      <ButtonElement />
     </React.Fragment>
   );
 }
