@@ -1,0 +1,50 @@
+/* Registration.module.scss */
+
+$primary-color: #007bff
+$background-color: #f5f5f5
+$border-radius: 5px
+
+.registrationContainer
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 100vh
+    background-color: $background-color
+
+.registrationForm
+    background: white
+    padding: 20px
+    border-radius: $border-radius
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
+    width: 300px
+
+h2
+    text-align: center
+    margin-bottom: 20px
+
+.formGroup
+    margin-bottom: 15px
+
+    label
+        display: block
+        margin-bottom: 5px
+
+    input
+        width: 100%
+        padding: 8px
+        box-sizing: border-box
+        border: 1px solid #ccc
+        border-radius: $border-radius
+
+.registrationButton
+    width: 100%
+    padding: 10px
+    background-color: $primary-color
+    border: none
+    color: white
+    border-radius: $border-radius
+    cursor: pointer
+    font-size: 16px
+
+    &:hover
+        background-color: darken($primary-color, 10%)
