@@ -35,7 +35,7 @@ const HomeContainer = styled.div`
   min-width: 90dvw;
   margin: 0 auto;
   padding: 20px;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.6);
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 `;
@@ -60,9 +60,10 @@ const Header = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
-  background-color: #f2f2f2;
+  background-color: #f8f8f2;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   height: 60px;
+  border-radius: 5px;
 `;
 const ProductsBox = styled.div`
   display: flex;
