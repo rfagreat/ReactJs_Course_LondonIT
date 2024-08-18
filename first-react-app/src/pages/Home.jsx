@@ -17,6 +17,8 @@
 import React from "react";
 import styled from "styled-components";
 import { useAuth } from "../context/AuthContext";
+import Card from "../components/Card";
+import { Products } from "../utils/fakeProducts";
 
 const BackgroundImage = styled.div`
   background-image: url("https://picsum.photos/1080/1920");
@@ -29,7 +31,8 @@ const BackgroundImage = styled.div`
 `;
 
 const HomeContainer = styled.div`
-  max-width: 400px;
+  max-width: 1400px;
+  min-width: 90dvw;
   margin: 0 auto;
   padding: 20px;
   background-color: #fff;
@@ -52,14 +55,40 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
+const Header = styled.header`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background-color: #f2f2f2;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 60px;
+`;
+const ProductsBox = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  padding: 16px;
+  max-height: 60vh;
+  overflow-y: auto;
+`;
 function Home() {
   const { logout } = useAuth();
   return (
     <BackgroundImage>
       <HomeContainer>
-        <Title>Welcome to our App!</Title>
-        <p>This is a sample home screen.</p>
-        <Button onClick={logout}>Logout</Button>
+        <Header>
+          <Title>Welcome to our App!</Title>
+          <Button onClick={logout}>Logout</Button>
+        </Header>
+        <p>Products</p>
+        {/* key props with listing of products and use of map function */}
+        <ProductsBox>
+          {Products.map((product) => {
+            return <Card key={product.id} product={product} showDetails />;
+          })}
+        </ProductsBox>
       </HomeContainer>
     </BackgroundImage>
   );
