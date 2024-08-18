@@ -1,12 +1,15 @@
 import React from "react";
 import { useAuth } from "../context/AuthContext";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Home from "./Home";
 // Import your CSS file if you want to style the component
 
 //Controlled components rely on React state to manage the form data,
 // while uncontrolled components use the DOM itself to handle form data.
 function Login() {
+
+  const input_ref= useRef()
+  
   // context hook
   const { login, isAuthenticated } = useAuth();
 
@@ -33,7 +36,7 @@ function Login() {
     // Add your login logic here, such as API calls
     login(formData);
   };
-
+console.log ('Input Ref', input_ref.current)
   return (
     <>
       {isAuthenticated ? (
@@ -47,6 +50,7 @@ function Login() {
               <label htmlFor="email">Email:</label>
               <input
                 type="email"
+                ref={input_ref}
                 id="email"
                 name="email"
                 value={formData.email}
