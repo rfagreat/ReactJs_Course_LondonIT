@@ -2,6 +2,7 @@
 
 .login-container {
   display: flex;
+  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -47,6 +48,7 @@ h2 {
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
+  margin: 10px 0px;
 }
 
 .login-button:hover {

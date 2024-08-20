@@ -2,14 +2,14 @@ import React from "react";
 import { useAuth } from "../context/AuthContext";
 import { useState, useRef } from "react";
 import Home from "./Home";
+import { Link } from "react-router-dom";
 // Import your CSS file if you want to style the component
 
 //Controlled components rely on React state to manage the form data,
 // while uncontrolled components use the DOM itself to handle form data.
 function Login() {
+  const input_ref = useRef();
 
-  const input_ref= useRef()
-  
   // context hook
   const { login, isAuthenticated } = useAuth();
 
@@ -36,7 +36,7 @@ function Login() {
     // Add your login logic here, such as API calls
     login(formData);
   };
-console.log ('Input Ref', input_ref.current)
+  console.log("Input Ref", input_ref.current);
   return (
     <>
       {isAuthenticated ? (
@@ -74,6 +74,9 @@ console.log ('Input Ref', input_ref.current)
             <button type="submit" className="login-button">
               Login
             </button>
+            <Link className="about-link" to="/about">
+              Go to About Page
+            </Link>
           </form>
         </div>
       )}
