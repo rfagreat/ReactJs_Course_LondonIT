@@ -11,15 +11,25 @@ import About from "../pages/About";
 import Login from "../pages/Login";
 import NotFoundPage from "../pages/NotFoundPage";
 import Register from "../pages/registration/Register";
+import PublicRoute from "./publicRoutes";
+import PrivateRoute from "./privateRoutes";
+import Settings from "../pages/settings";
 
 const BrowserRoutes = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        {/* Nesting Routing */}
+        <Route path="/" element={<PublicRoute />}>
+          <Route index path="/" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Route>
+
+        <Route element={<PrivateRoute />}>
+          <Route path="/home" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/settings" element={<Settings />} />
+        </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Router>

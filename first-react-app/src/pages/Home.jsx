@@ -24,16 +24,17 @@ const BackgroundImage = styled.div`
   background-image: url("https://picsum.photos/1080/1920");
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 95dvh;
+  with: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 10px;
 `;
 
 const HomeContainer = styled.div`
-  max-width: 1400px;
-  min-width: 90dvw;
   margin: 0 auto;
+  max-width: 1400px;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 10px;
