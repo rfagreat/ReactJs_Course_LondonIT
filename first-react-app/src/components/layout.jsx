@@ -4,6 +4,10 @@ import { Link, Outlet } from "react-router-dom";
 const Layout = () => {
   const [active, setActive] = useState("Home");
 
+  // import useNavigate from "react-router-dom"
+  // const navigate = useNavigate();
+  // navigate("/home");
+
   const menuItems = [
     { name: "Home", icon: "🏠", path: "/" },
     { name: "About", icon: "📊", path: "/about" },

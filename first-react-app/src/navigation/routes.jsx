@@ -14,6 +14,7 @@ import Register from "../pages/registration/Register";
 import PublicRoute from "./publicRoutes";
 import PrivateRoute from "./privateRoutes";
 import Settings from "../pages/settings";
+import Counter from "../pages/counter";
 
 const BrowserRoutes = () => {
   return (
@@ -23,6 +24,7 @@ const BrowserRoutes = () => {
         <Route path="/" element={<PublicRoute />}>
           <Route index path="/" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/counter" element={<Counter />} />
         </Route>
 
         <Route element={<PrivateRoute />}>
