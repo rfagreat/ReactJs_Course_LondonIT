@@ -1,4 +1,8 @@
 /* Login.css */
+body {
+  margin: 0;
+  padding: 0;
+}
 
 .login-container {
   display: flex;
@@ -53,4 +57,62 @@ h2 {
 
 .login-button:hover {
   background-color: #0056b3;
+}
+
+.not-found-page {
+  min-height: 100vh;
+  background: linear-gradient(to right, #9b59b6, #e74c3c, #f1c40f);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.not-found-content {
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  space-y: 2rem;
+}
+
+.not-found-content h1 {
+  font-size: 6rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0.5rem;
+}
+
+.not-found-content .label {
+  background-color: #000;
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  transform: rotate(12deg);
+  display: inline-block;
+  font-size: 0.875rem;
+}
+
+.not-found-content p {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.not-found-content .go-home-link {
+  display: inline-block;
+  background-color: #fff;
+  color: #000;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.not-found-content .go-home-link:hover {
+  background-color: #000;
+  color: #fff;
+  transform: translateY(-0.25rem) scale(1.1);
 }
