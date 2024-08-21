@@ -105,7 +105,15 @@ const FormInput = styled.input`
   border-radius: 4px;
 `;
 
+/**
+ * A React component that displays a list of products and allows users to add, update, and delete products.
+ *
+ * @returns {JSX.Element} A JSX element representing the product list and forms.
+ */
 const Products = () => {
+  /**
+   * State variables to manage the product list and forms.
+   */
   const [showAddForm, setShowAddForm] = useState(false);
   const [showUpdateForm, setShowUpdateForm] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -118,14 +126,38 @@ const Products = () => {
     category: "",
   });
 
+  /**
+   * Fetch products from API on component mount.
+   * async await to resolve promise
+   */
+  //What is promise?
+  //A promise is a result of an asynchronous operation. It represents a value that may not be
+  //available yet, but will be resolved at some point in the future.
   useEffect(() => {
-    const fetchProducts = async () => {
-      const data = await getProducts();
-      setProducts(data);
-    };
+    async function fetchProducts() {
+      try {
+        const data = await getProducts();
+        setProducts(data);
+      } catch (error) {
+        console.error(error);
+      }
+    }
     fetchProducts();
   }, []);
 
+  /**
+   * Handle adding a new product.
+   *
+   * @example
+   * const newProduct = {
+   *   title: "New Product",
+   *   price: 10.99,
+   *   description: "This is a new product",
+   *   image: "https://example.com/image.jpg",
+   *   category: "Electronics",
+   * };
+   * handleAddProduct();
+   */
   const handleAddProduct = async () => {
     const result = await addProduct(JSON.stringify(newProduct));
     setProducts([...products, result]);
@@ -139,6 +171,19 @@ const Products = () => {
     setShowAddForm(false);
   };
 
+  /**
+   * Handle updating an existing product.
+   *
+   * @example
+   * const updatedProduct = {
+   *   title: "Updated Product",
+   *   price: 9.99,
+   *   description: "This is an updated product",
+   *   image: "https://example.com/image.jpg",
+   *   category: "Electronics",
+   * };
+   * handleUpdateProduct();
+   */
   const handleUpdateProduct = async () => {
     try {
       const result = await updateProduct(
@@ -149,7 +194,6 @@ const Products = () => {
       setProducts(
         products.map((p) => (p.id === selectedProduct.id ? newProduct : p))
       );
-
       setNewProduct({
         title: "",
         price: "",
@@ -158,19 +202,42 @@ const Products = () => {
         category: "",
       });
     } catch (err) {
-      console.error("failed to add product ❌", JSON.stringify(err, null, 2));
-      alert("failed to add product ❌", JSON.stringify(err.message));
+      console.error(
+        "failed to update product ❌",
+        JSON.stringify(err, null, 2)
+      );
     } finally {
       setSelectedProduct(null);
       setShowUpdateForm(false);
     }
   };
 
+  /**
+   * Handle deleting a product.
+   *
+   * @param {number} id The ID of the product to delete.
+   * @example
+   * handleDeleteProduct(1);
+   */
   const handleDeleteProduct = async (id) => {
     await deleteProduct(id);
     setProducts(products.filter((product) => product.id !== id));
   };
 
+  /**
+   * Handle editing a product.
+   *
+   * @param {object} product The product to edit.
+   * @example
+   * handleEditProduct({
+   *   id: 1,
+   *   title: "Product 1",
+   *   price: 10.99,
+   *   description: "This is product 1",
+   *   image: "https://example.com/image.jpg",
+   *   category: "Electronics",
+   * });
+   */
   const handleEditProduct = (product) => {
     setSelectedProduct(product);
     setNewProduct(product);
