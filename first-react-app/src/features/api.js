@@ -81,6 +81,8 @@
 // main();
 
 //<-------------------------------------------------APIS Calls----------------------------------------------->
+// To install axios npm install axios OR npm i axios
+import axios from "axios";
 /**
  * This function retrieves a list of users from a website (called an API).
  * It sends a GET request to the API to fetch the list of users.
@@ -91,11 +93,8 @@
  * console.log(users); // Output: [{ id: 1, name: 'John Doe' }, { id: 2, name: 'Jane Doe' }, ...]
  */
 export const getUsers = async () => {
-  const users = await fetch("https://jsonplaceholder.typicode.com/users", {
-    method: "GET",
-  });
-  const result = await users.json();
-  return result;
+  const users = await axios.get("https://jsonplaceholder.typicode.com/users");
+  return users.data;
 };
 
 /**
@@ -135,6 +134,10 @@ export const addProduct = async (payload) => {
       "Content-type": "application/json; charset=UTF-8",
     },
   });
+  // OR
+  // const result = await axios.post("https://fakestoreapi.com/products", payload);
+  // return result;
+
   const result = await addOne.json();
   return result;
 };
