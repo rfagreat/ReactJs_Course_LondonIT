@@ -11,6 +11,7 @@ const Layout = () => {
   const menuItems = [
     { name: "Home", icon: "🏠", path: "/" },
     { name: "About", icon: "📊", path: "/about" },
+    { name: "Products", icon: "📦", path: "/products" },
     { name: "Settings", icon: "⚙️", path: "/settings" },
   ];
 

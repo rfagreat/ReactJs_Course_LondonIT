@@ -16,6 +16,7 @@ import PrivateRoute from "./privateRoutes";
 import Settings from "../pages/settings";
 import Counter from "../pages/counter";
 import TodoPage from "../pages/todo";
+import Products from "../pages/products";
 
 const BrowserRoutes = () => {
   return (
@@ -32,6 +33,7 @@ const BrowserRoutes = () => {
         <Route element={<PrivateRoute />}>
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/products" element={<Products />} />
           <Route path="/settings" element={<Settings />} />
         </Route>
         <Route path="*" element={<NotFoundPage />} />
