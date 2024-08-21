@@ -15,6 +15,7 @@ import PublicRoute from "./publicRoutes";
 import PrivateRoute from "./privateRoutes";
 import Settings from "../pages/settings";
 import Counter from "../pages/counter";
+import TodoPage from "../pages/todo";
 
 const BrowserRoutes = () => {
   return (
@@ -25,6 +26,7 @@ const BrowserRoutes = () => {
           <Route index path="/" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/counter" element={<Counter />} />
+          <Route path="/todo" element={<TodoPage />} />
         </Route>
 
         <Route element={<PrivateRoute />}>

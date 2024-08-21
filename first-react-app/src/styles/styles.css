@@ -259,3 +259,181 @@ input[type="checkbox"] {
   font-size: 0.9em;
   color: #555;
 }
+
+/* todo styling */
+.todo-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem;
+}
+
+.count-display {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.todo-list {
+  width: 100%;
+  max-width: 600px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.task-input {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.add-task-btn {
+  display: block;
+  margin: 0 auto 1rem auto;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-task-btn:hover {
+  background-color: #218838;
+}
+
+.task-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.task-item:last-child {
+  border-bottom: none;
+}
+
+.task-text {
+  flex-grow: 1;
+  margin-right: 1rem;
+}
+
+.toggle-task-btn,
+.remove-task-btn {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 0.5rem;
+}
+
+.toggle-task-btn:hover,
+.remove-task-btn:hover {
+  background-color: #0056b3;
+}
+
+.expensive-calculation-component,
+.parent-component,
+.item-list-component {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.number-input,
+.filter-input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.result,
+.count {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.increment-button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.increment-button:hover {
+  background-color: #0056b3;
+}
+
+.item-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+.item-name {
+  font-weight: bold;
+}
+
+.item-price {
+  color: #666;
+}
+
+.hooks-box {
+  width: 700px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* align-items: center; */
+  padding: 2rem;
+}

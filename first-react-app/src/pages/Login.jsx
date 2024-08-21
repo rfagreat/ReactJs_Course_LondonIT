@@ -81,6 +81,10 @@ function Login() {
           <Link className="counter-link" to="/counter">
             Go to Counter Page
           </Link>
+          <br />
+          <Link className="todo-link" to="/todo">
+            Go to Todo Page
+          </Link>
         </form>
       )}
     </div>
