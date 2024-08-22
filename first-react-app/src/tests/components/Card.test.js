@@ -4,23 +4,20 @@ import "@testing-library/jest-dom";
 import Card from "../../components/Card";
 
 describe("Card", () => {
-  test("this will render the card with details", () => {
-    render(
-      <Card
-        product={{
-          image: "https://example.com/image.jpg",
-          title: "Shirt",
-          description: "Product description",
-          price: 19.99,
-          category: "Electronics",
-          rating: {
-            rate: 4.5,
-            count: 100,
-          },
-        }}
-      />
-    );
-    const cardTitleElement = screen.getByText("Shirast");
-    expect(cardTitleElement).toBeInTheDocument();
+  test("This will test card description", () => {
+    const product = {
+      image: "https://example.com/image.jpg",
+      title: "Product Title",
+      description: "Product description",
+      price: 19.99,
+      category: "Electronics",
+      rating: {
+        rate: 4.5,
+        count: 100,
+      },
+    };
+    render(<Card product={product} />);
+    const descriptionElement = screen.getByText("Product description");
+    expect(descriptionElement).toBeInTheDocument();
   });
 });
