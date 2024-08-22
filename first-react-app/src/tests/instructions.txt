@@ -43,3 +43,8 @@ OR npm install --save-dev jest @testing-library/react @testing-library/jest-dom 
                 "setupFilesAfterEnv": ["<rootDir>/setupTests.js"]
                 }
 4- Write some tests and then test by typing npm test in terminal.
+
+
+we going to user React Testing Library for our unit tests
+
+npm install --save-dev @testing-library/react @testing-library/jest-dom
