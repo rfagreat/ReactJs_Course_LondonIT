@@ -48,3 +48,7 @@ OR npm install --save-dev jest @testing-library/react @testing-library/jest-dom 
 we going to user React Testing Library for our unit tests
 
 npm install --save-dev @testing-library/react @testing-library/jest-dom
+
+To Install Use this line:
+
+npm install --save-dev @testing-library/react @testing-library/jest-dom @testing-library/user-event
