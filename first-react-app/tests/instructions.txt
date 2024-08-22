@@ -1,3 +1,17 @@
+No more support for latest version of React.js
+
+https://stackoverflow.com/questions/72029189/does-enzyme-support-react-version-18
+
+Jest: is the test runner and framework that executes our tests and providers helper functions for assertions.
+
+Enzyme: is a test helper library that enables us to render React components on a virtual DOM and provides method
+to inspect the DOM tree for specific components and their properties. Think of JQuery but for React components for testing.
+
+enzyme-adapter-react-16: is an adapter between React and Enzyme. This will be executed before running the tests.
+@types/jest is types library that provides typing and intellisence for global jest keywords such as describe and it in our test file. This makes type safety more robust for type files and provides better IDE support for
+test files.
+
+
 Why Unit Testing in React.js?
 
 Ensure Component Reliability: Unit testing allows developers to test individual components to ensure they work as expected.
@@ -18,7 +32,8 @@ It works seamlessly with Enzyme for component testing.
 
 First, ensure you have Node.js and npm installed. Then, run the following commands to install Jest and Enzyme:
 
-1- npm install --save-dev jest enzyme enzyme-adapter-react-16
+1- npm install --save-dev jest enzyme enzyme-adapter-react-16 --f
+OR npm install --save-dev jest @testing-library/react @testing-library/jest-dom @wojtekmaj/enzyme-adapter-react-17 enzyme --f
 2- Configure Enzyme: Create a setup file for Enzyme (e.g., setupTests.js) in the root of your project or in src/ directory.
 3- Update package.json:
                 "scripts": {
@@ -27,4 +42,4 @@ First, ensure you have Node.js and npm installed. Then, run the following comman
                 "jest": {
                 "setupFilesAfterEnv": ["<rootDir>/setupTests.js"]
                 }
-4- Write some tests and then test by typing npm test in terminal
+4- Write some tests and then test by typing npm test in terminal.

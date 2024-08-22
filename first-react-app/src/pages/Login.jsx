@@ -3,6 +3,7 @@ import { useAuth } from "../context/AuthContext";
 import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import Navigation from "../components/navLink";
+import Button from "../components/Button";
 // Import your CSS file if you want to style the component
 
 //Controlled components rely on React state to manage the form data,
@@ -74,6 +75,7 @@ function Login() {
           <button type="submit" className="login-button">
             Login
           </button>
+
           <Link className="about-link" to="/about">
             Go to About Page
           </Link>
